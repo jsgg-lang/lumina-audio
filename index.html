@@ -12,9 +12,9 @@
 <header class="header">
     <div class="container nav">
         <div class="logo">
-            <h2>LUMINA AUDIO</h2>
+            <img src="/images/Group.svg" alt="logo">
         </div>
-
+        
     <nav class="nav-center">
         <ul>
             <li><a href="#">Hjem</a></li>
@@ -37,36 +37,58 @@
 <main>
 
     <!-- Hero sektion med video-->
-<section class="hero">
-    <h1 class="visually-hidden">LUMINA ONE</h1>
+
+    <div class="hero">
     <video autoplay muted loop class="hero-video">
-    <source src="/videos/spin.mp4" type="video/mp4">
-</video>
+        <source src="/videos/spin.mp4" type="video/mp4">
+    </video>
+
     <div class="hero-overlay"></div>
-</section>
+    <article class="hero-content">
+        <h1>LUMINA ONE</h1>
+        <p class="hero-tagline">Skab stemningen - hvor end dagen fører dig hen.</p>
+        <div class="hero-cta">
+            <a href="#" class="btn btn-white">Køb nu</a>
+            <a href="#" class="btn btn-ghost">Lær mere</a>
+        </div>
+    </article>
+</div>
+
 
 <!-- Produkt showcase med billede -->
 <section class="section-white padding">
     <div class="container">
         <h2>LUMINA ONE</h2>
-        <p class="product-price">1499,-</p>
+             <p class="product-price">Skabt til øjeblikke, der fortjener et soundtrack. </p>       
+                <p class="product-price"> 1499,- </p>
     </div>
+
 
     <div class="slider">
         <div class="slides">
-            <div class="slide">
-                <img src="/images/billede-valg.png" alt="LUMINA ONE">
+        
+                   <div class="slide">
+                <picture><source srcset="/images/billede-valg.png" 
+                    type="image/png"><img src="/images/billede-valg.png" alt="LUMINA ONE"></picture>
             </div>
+
             <div class="slide">
-                <img src="/images/placeholder.png" alt="LUMINA ONE">
+                <picture><source srcset="/images/billede-valg.png" 
+                    type="image/png"><img src="/images/billede-valg.png" alt="LUMINA ONE"></picture>
             </div>
+
             <div class="slide">
-                <img src="/images/placeholder.png" alt="LUMINA ONE">
+                <picture><source srcset="/images/billede-valg.png" 
+                    type="image/png"><img src="/images/billede-valg.png" alt="LUMINA ONE"></picture>
+            </div>
+
+            <div class="slide">
+                <picture><source srcset="/images/billede-valg.png" 
+                    type="image/png"><img src="/images/billede-valg.png" alt="LUMINA ONE"></picture>
+            </div>
         </div>
-        <div class="slide">
-            <img src="/images/placeholder.png" alt="LUMINA ONE">
-    </div>
 </div>
+
 
  <div class="dots">
             <span class="dot active" style="background-color: #DCA1A1;"></span>
@@ -76,42 +98,47 @@
         </div>
 
         <div class="køb-knap">
-            <button>Køb nu</button>
+            <a href="#" class="btn btn-dark">Køb nu</a>
         </div>
-    </div>
 </section>
 
+
 <!-- AI billeder-->
- <section class="section-lifestyle">
+ <div class="section-lifestyle">
     <div class="container">
-        <h2>Placeholder overskrift</h2>
         <div class="insta-grid">
             <div class="insta-item">
-                <img src="/images/ai-billede1.png" alt="Billede">
+                <picture><source srcset="/images/ai-billede1.png" type="image/png">
+                    <img src="/images/ai-billede1.png" alt="Billede"></picture>
             </div>
             <div class="insta-item">
-                <img src="/images/ai-billede2.png" alt="Billede">
+                <picture><source srcset="/images/ai-billede2.png" type="image/png">
+                    <img src="/images/ai-billede2.png" alt="Billede"></picture>
             </div>
             <div class="insta-item">
-                <img src="/images/ai-billede3.png" alt="Billede">
+                <picture><source srcset="/images/ai-billede3.png" type="image/png">
+                    <img src="/images/ai-billede3.png" alt="Billede"></picture>
             </div>
         </div>
     </div>
- </section>
 
+    <div class="køb-knap">
+    <a href="#" class="btn btn-dark">Udforsk kollektionen</a>
+ </div>
+
+ </div>
+ 
  <!-- Produktspecifikation -->
   <section class="section-spec section-padding">
     <div class=" container spec-layout">
-
-        <!-- Venstre side-->
-         <p>LUMINA ONE er designet med fokus på dansk håndværk og moderne teknologi. Højttaleren kombinerer premium lydkvalitet med elegant design.</p>
-    <h2>Produktspecifikationer</h2>   
+         <p> </p>
+    <h2 style="text-align: center;">Produktspecifikationer</h2>    
     <div class="spec-intro">
         <img src="/images/ai-billede4.png" alt="Lila Lumina One"> 
         </div>
 
-<!-- Højre side -->
- <div class="spec-wrapper">
+
+        <div class="spec-wrapper">
 
     <div class="spec-row">
         <div class="spec-title">Højtaler</div>
@@ -140,21 +167,23 @@
 
  </div>
  </div>
+
+
  <div class="køb-knap">
-            <button>Køb nu</button>
+            <a href="#" class="btn btn-dark">Køb nu</a>
         </div>
   </section>
+
 
   <!-- Social Connects -->
    <section class="section-gradient-bottom">
     <div class="container">
         
-        <h1>Saml festen ét sted</h1>
-
         <div class="social-layout">
         <div class="social-content">
             <h2>Del musikken. Del stemningen</h2>
-            <hr class="footer-divider">
+            <h3 style="font-size: 1.19rem;">Social Connects:</h3>
+            <hr>
             <p>Social Connect er appen, der gør det nemt at forbinde venner direkte til din LUMINA One højtaler. Uanset om det er strandtur, forfest eller park-picnic, kan alle bidrage til playlisten – helt uden besvær.</p>
         
         <h3>Funktioner:</h3>
@@ -169,8 +198,17 @@
         </ul>
     </div>
 
-    <div class="app-image">
-        <img src="/images/iPhone.png" alt="App">
+
+    <div class="app-right">
+        <div class="app-image">
+            <img src="/images/iPhone.png" alt="App">
+        </div>
+        <div class="app-cta">
+            <picture class="appstore-logo">
+                <source srcset="/images/appstore-logo.png" type="image/png">
+                <img src="/images/appstore-logo.png" alt="Download on the App Store">
+            </picture>
+        </div>
     </div>
         </div>
     </div>
@@ -180,20 +218,15 @@
 
 <footer>
     <div class="container footer-flex">
-        <hr class="footer-divider">
-
-        <p class="copyright">
-            &copy; 2026 LUMINA AUDIO. Alle rettigheder forbeholdes.
-        </p>
-
         <div>
             <h3>LUMINA AUDIO</h3>
             <p>Sønherhøj 7G,</p>
             <p>8260 Viby J</p>
+            <p>CVR: 123345678</p>
         </div>
 
         <div>
-            <h4>Links</h4>
+            <h4>Genveje</h4>
             <p><a href="#">Hjem</a></p>
             <p><a href="#">Shop</a></p>
             <p><a href="#">Om os</a></p>
@@ -207,6 +240,15 @@
             <p><a href="#">TikTok</a></p>
         </div>
 
+        <div>
+            <h4>Har du brug for hjælp?</h4>
+            <p>Telefonnummer: 72 28 60 00</p>
+            <p>Åbningstider:<br>Mandag - Fredag: 9:00 - 16:00<br>Lørdag: 10:00 - 14:00<br>Søndag: Lukket</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <hr class="footer-divider">
+        <p class="copyright">&copy; 2026 LUMINA AUDIO. Alle rettigheder forbeholdes.</p>
     </div>
 </footer>
 

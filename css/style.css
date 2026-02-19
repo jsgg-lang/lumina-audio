@@ -13,6 +13,13 @@
     --layout: 16px;
 }
 
+/* @font-face {
+  font-family: 'x';
+  src: url('/fonts/x.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */ 
+
 * {
     margin: 0;
     padding: 0;
@@ -55,7 +62,7 @@ img {
     padding: 2rem 0;
     padding-left: 0rem;
     padding-right: 0rem;
-    background: linear-gradient(to top, var(--white) 61%, var(--fv3) 100%);
+  background: linear-gradient(to bottom, #FFFFFF 61%, #AE90A7 100%);
 }
 
 .secion-white {
@@ -68,19 +75,24 @@ img {
     font-size: 2.5rem;
 }
 
+.section-white p {
+    font-weight: lighter;
+    font-style: italic;
+}
+
 .section-gradient-bottom {
     background: linear-gradient(to bottom, var(--white) 11%, var(--gradient) 100%);
 }
 
 .section-lifestyle {
-    background: linear-gradient(to bottom, var(--white) 90%, var(--fv3) 100%);
+  background: linear-gradient(to bottom, #FFFFFF 90%, #AE90A7 100%);
     padding: 3rem 0;
-    padding-bottom: 8rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 
 .section-spec {
-    background: linear-gradient(to top, var(--white) 61%, var(--fv3) 100%);
+    background: linear-gradient(to top, #FFFFFF 61%, #AE90A7 100%);
     padding: 8rem;
     padding-left: 0rem;
     padding-right: 0rem;
@@ -89,6 +101,9 @@ img {
 /* Header og navigationsbar */
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: var(--white);
     padding: 1.5rem 0;
     border-bottom: 1px solid #eee;
@@ -107,6 +122,11 @@ img {
     justify-content: center;
 }
 
+.logo img {
+    width: 100px;
+    margin-right: 0.5rem;
+    align-items: end;
+}
 /* Center navigation */
 
 .nav-center {
@@ -158,62 +178,68 @@ transition: 0.2s ease;
 
 .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .hero-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Gør så der kan være en overlay over videoen */
-    z-index: -1;
+    z-index: 0;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);  
-  z-index: 2; 
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+
+opacity: 50%;
+
+    z-index: 1;
 }
 
-.hero .container {
-    display: flex;
-    justify-content: center;
+.hero-content {
     position: relative;
-    z-index: 3;
-}
-
-.hero-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 3rem;
-    border-radius: var(--radius);
-    max-width: 500px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 0 1.5rem;
+    gap: 1rem;
 }
 
-.hero-box h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: var(--text-dark);
+.hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.hero-box p {
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
-        color: #666;
-    }
+.hero-content h1 {
+    font-size: clamp(2.5rem, 9vw, 7rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
 
     /* Produkt pris */
 
@@ -279,72 +305,106 @@ transition: 0.2s ease;
 }
 
 .dot.active {
-    border-color: red;
+    border-color: #2a2a2a;
+    border-width: 1px;
     transform: scale(1.1);
 }
 
-/* Knapper */
+/* Knapper — unified system */
 
-.btn-primary {
-  background: var(--fv1);
-  color: var(--white);
-  padding: 1rem 2.5rem;
-  text-decoration: none;
-  border-radius: 8px;
-  display: inline-block;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: opacity 0.3s ease;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.btn-outline {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  border: 2px solid var(--fv1);
-  color: var(--fv1);
+  letter-spacing: 0.04em;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease, transform 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-.btn-outline:hover {
-  background: var(--fv1);
-  color: var(--white);
+.btn:active {
+  transform: translateY(1px);
 }
+
+/* Solid dark — primary CTA */
+.btn-dark {
+  background: var(--text-dark);
+  color: var(--white);
+  border-color: var(--text-dark);
+  margin-bottom: 3.3rem;
+}
+
+.btn-dark:hover {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Solid white — for use over dark/video backgrounds */
+.btn-white {
+  background: var(--white);
+  color: var(--text-dark);
+  border-color: var(--white);
+}
+
+.btn-white:hover {
+  background: var(--fv2);
+  border-color: var(--fv2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Ghost — transparent with white border, for use over images/video */
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Hero CTA wrapper */
+
+.hero-cta {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* køb-knap wrapper — shared layout for CTA rows */
 
 .køb-knap {
   display: flex;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 2.5rem 0;
 }
 
-.køb-knap button {
-  all: unset;
-  background: linear-gradient(to bottom, var(--fv2) 50%, var(--white) 100%);
-  color: #111;
-  padding: 1rem 3rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
+/* App section CTA */
+
+.app-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.køb-knap button:hover {
-  background-color: #e7e2d5;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.køb-knap button:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+.app-cta {
+  display: flex;
+  justify-content: center;
 }
 
 /* Grid layout for produkt showcases */
@@ -440,12 +500,12 @@ transition: 0.2s ease;
 }
 
 .social-content h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 0rem;
     margin-top: 1rem;
 }
 
-.social-content h3 {
+.social-content h3 {
     font-size: 1.1rem; 
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -492,6 +552,18 @@ transition: 0.2s ease;
     object-fit: cover;
 }
 
+.appstore-logo img {
+    width: 160px;
+    height: auto;
+
+}
+
+.appstore-logo img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
 /* Footer */
 
 footer {
@@ -501,30 +573,34 @@ footer {
 .footer-flex {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 2rem;
+    padding: 3rem 0 2rem;
+}
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .footer-divider {
-    grid-column: 1 / -1;
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
 }
 
 .funktioner-divider {
-    grid-column: 1 / -1;
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 1rem;
 }
 
 .copyright {
-    grid-column: 1 / -1;
     text-align: center;
     font-size: 0.85rem;
+    font-style: italic;
     color: #999;
-    margin-bottom: 2rem;
 }
 
 footer h3,
@@ -562,12 +638,17 @@ footer a:hover {
     gap: 1rem;
   }
   
-  .hero {
-    height: 50vh;
+
+  .subheadline p {
+    text-align: center;
   }
-  
-  .hero-box h2 {
-    font-size: 2rem;
+  .hero {
+    height: 100svh;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
   }
   
   .slide {
@@ -603,10 +684,6 @@ footer a:hover {
     font-size: 0.9rem;
   } 
 
-  .hero-box h2 {
-    font-size: 1.5rem;
-  }
- 
   .dots {
     gap: 1rem;
   }

@@ -443,18 +443,6 @@ opacity: 50%;
     align-items: start;
 }
 
-.spec-intro h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.spec-intro p {
-   max-width: 400px;
-   line-height: 1.7;
-   margin-bottom: 1.5rem;
-}
-
-
 .spec-intro img {
     width: 100%;
     border-radius: 16px;
